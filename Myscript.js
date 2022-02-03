@@ -5,11 +5,10 @@ function add(){
     let newText = document.getElementById('new_text')
 
     //2. tambahkan list ke dalam ul
-    let newTodo = "<li> <span onclick='toggle(this)'>" + newText.value + "</span>" +
-                "<span onclick='removeItem(this)'> [x] </span>" +
-                "</li>"
+    let newTodo = `<li class='animate__animated animate__backInDown'> <span onclick='toggle(this)'>${newText.value}</span><span onclick='removeItem(this)' class='fas fa-trash'> </span></li>`         
 
-    todo.insertAdjacentHTML('afterbegin',newTodo);   
+    todo.insertAdjacentHTML('afterbegin',newTodo)   
+   
 
     //3. kosongkan fieldnya
     newText.value=" "
@@ -22,3 +21,5 @@ function toggle(el){
 function removeItem(el){
     el.parentElement.remove()
 }
+
+
